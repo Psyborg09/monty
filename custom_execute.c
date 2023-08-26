@@ -2,25 +2,22 @@
 /**
 * execute - executes the opcode
 * @stack_head: head linked list - stack
-* @line_number: line_counter
-* @monty_file: poiner to monty file
-* @line_content: line content
+* @linenum: line_counter
+* @file: poiner to monty file
+* @line: line content
 * Return: no return
 */
-int execute(char *line_content, stack_t **stack_head, unsigned int line_number, FILE *monty_file)
+int execute(char *line, stack_t **stack_head, unsigned int linenum, FILE *file)
 {
-	instruction_t operations[] = {
-				{"push", custom_push},
-				{"pall", custom_pall},
-				{"pint", custom_pint},
-				{"pop", custom_pop},
-				{"swap", custom_swap},
-				{"add", custom_add},
-				{"nop", custom_nop},
-				{"sub", custom_sub},
-				{"div", custom_div},
-				{"mul", custom_mul},
-				{"mod", custom_mod},
+	instruction_t operations[] = {{"push", custom_push},
+		{"pall", custom_pall},
+		{"pint", custom_pint},
+		{"pop", custom_pop},
+		{"swap", custom_swap},
+		{"add", custom_add},
+		{"nop", custom_nop},
+		{"sub", custom_sub},
+		{"div", custom_div}, {"mul", custom_mul}, {"mod", custom_mod},
 				{"pchar", custom_pchar},
 				{"pstr", custom_pstr},
 				{"rotl", custom_rotate_left},
@@ -29,9 +26,6 @@ int execute(char *line_content, stack_t **stack_head, unsigned int line_number, 
 				{"stack", custom_stack},
 				{NULL, NULL}
 				};
-	unsigned int i = 0;
-	char *opcode;
-
 	opcode = strtok(line_content, " \n\t");
 	if (opcode && opcode[0] == '#')
 		return (0);

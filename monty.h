@@ -58,8 +58,8 @@ char  *clean_line(char *content);
 void custom_push(stack_t **stack_head, unsigned int line_number);
 void custom_pall(stack_t **stack_head, unsigned int line_number);
 void custom_pint(stack_t **stack_head, unsigned int line_number);
-int execute(char *line_content, stack_t **stack_head, unsigned int line_number, FILE *monty_file);
 void freestack(stack_t *stack_head);
+int execute(char *line, stack_t **stack_head, unsigned int linenum, FILE *file);
 void custom_pop(stack_t **stack_head, unsigned int line_number);
 void custom_swap(stack_t **stack_head, unsigned int line_number);
 
@@ -83,5 +83,8 @@ void custom_addqueue(stack_t **stack_head, int new_value);
 void custom_queue(stack_t **stack_head, unsigned int line_number);
 void custom_queue(stack_t **stack_head, unsigned int line_number);
 void custom_stack(stack_t **stack_head, __attribute__((unused)) unsigned int line_number);
+extern bus_t bus = {NULL, NULL, NULL, 0};
+extern unsigned int i = 0;
+extern char *opcode;
 #endif
 

@@ -37,7 +37,7 @@ void custom_mod(stack_t **stack_head, unsigned int line_number)
 	}
 
 	remainder = current_node->next->n % current_node->n;
-        current_node->next->n = remainder;
+	current_node->next->n = remainder;
 	*stack_head = current_node->next;
 	free(current_node);
 }

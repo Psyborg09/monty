@@ -1,20 +1,19 @@
 #include "monty.h"
 /**
  * custom_add - adds the top two elements of the stack.
- * @head_stack: stack head
+ * @stack_head: stack head
  * @line_number: line_number
  * Return: no return
 */
 void custom_add(stack_t **stack_head, unsigned int line_number)
 {
-	stack_t *current_node;
+	stack_t *currentNode;
 	int stack_length = 0, sum;
 
-	for(current_node = *stack_head; current_node; current_node = current_node->next)
+	for (currentNode = *stack_head; currentNode; currentNode = currentNode->next)
 	{
 		stack_length++;
 	}
-
 	if (stack_length < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
@@ -23,9 +22,9 @@ void custom_add(stack_t **stack_head, unsigned int line_number)
 		freestack(*stack_head);
 		exit(EXIT_FAILURE);
 	}
-	current_node = *stack_head;
-	sum = current_node->n + current_node->next->n;
-	current_node->next->n = sum;
-	*stack_head = current_node->next;
-	free(current_node);
+	currentNode = *stack_head;
+	sum = currentNode->n + currentNode->next->n;
+	currentNode->next->n = sum;
+	*stack_head = currentNode->next;
+	free(currentNode);
 }

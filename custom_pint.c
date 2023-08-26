@@ -7,7 +7,7 @@
  */
 void custom_pint(stack_t **stack_head, unsigned int line_number)
 {
-	        if (*stack_head == NULL)
+		if (*stack_head == NULL)
 		{
 			fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 			fclose(bus.file);

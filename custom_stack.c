@@ -6,9 +6,9 @@
  * @line_number: line_number (unused)
  * Return: no return
  */
-void custom_stack(stack_t **stack_head, __attribute__((unused)) unsigned int line_number)
+void custom_stack(stack_t **stack_head, unsigned int line_number)
 {
-        (void) stack_head;
-        (void) line_number;
-        bus.lifi = 0;
+	(void) stack_head;
+	(void) line_number;
+	bus.lifi = 0;
 }

@@ -10,7 +10,7 @@ void custom_div(stack_t **stack_head, unsigned int line_number)
 	stack_t *current_node;
 	int stack_length = 0, quotient;
 
-	for(current_node = *stack_head; current_node; current_node = current_node->next)
+	for (currentNode = *stack_head; currentNode; currentNode = currentNode->next)
 	{
 		stack_length++;
 	}
@@ -22,9 +22,9 @@ void custom_div(stack_t **stack_head, unsigned int line_number)
 		freestack(*stack_head);
 		exit(EXIT_FAILURE);
 	}
-	current_node = *stack_head;
+	currentNode = *stack_head;
 
-	if (current_node->n == 0)
+	if (currentNode->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		fclose(bus.file);
@@ -32,8 +32,8 @@ void custom_div(stack_t **stack_head, unsigned int line_number)
 		freestack(*stack_head);
 		exit(EXIT_FAILURE);
 	}
-	quotient = current_node->next->n / current_node->n;
-	current_node->next->n = quotient;
-	*stack_head = current_node->next;
-	free(current_node);
+	quotient = currentNode->next->n / currentNode->n;
+	currentNode->next->n = quotient;
+	*stack_head = currentNode->next;
+	free(currentNode);
 }

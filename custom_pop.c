@@ -8,7 +8,7 @@
 void custom_pop(stack_t **stack_head, unsigned int line_number)
 {
 	stack_t *current_node;
-	
+
 	if (*stack_head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
