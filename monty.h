@@ -82,5 +82,6 @@ void custom_addnode(stack_t **stack_head, int new_value);
 void custom_addqueue(stack_t **stack_head, int new_value);
 void custom_queue(stack_t **stack_head, unsigned int line_number);
 void custom_queue(stack_t **stack_head, unsigned int line_number);
+void custom_stack(stack_t **stack_head, __attribute__((unused)) unsigned int line_number);
 #endif
 

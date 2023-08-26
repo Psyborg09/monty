@@ -39,7 +39,7 @@ int execute(char *line_content, stack_t **stack_head, unsigned int line_number, 
 	while (operations[i].opcode && opcode)
 	{
 		if (strcmp(opcode, operations[i].opcode) == 0)
-		{	operations[i].f(stack, line_number);
+		{	operations[i].f(stack_head, line_number);
 			return (0);
 		}
 		i++;
@@ -49,7 +49,7 @@ int execute(char *line_content, stack_t **stack_head, unsigned int line_number, 
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		fclose(monty_file);
 		free(line_content);
-		freestack(*stack);
+		freestack(*stack_head);
 		exit(EXIT_FAILURE);
 	}
 	return (1);
