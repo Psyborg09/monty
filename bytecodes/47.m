@@ -14,23 +14,4 @@ queue
 push 11111
 add
 pall
-julien@ubuntu:~/monty$ ./monty bytecodes/47.m
-1
-2
-3
-6
-5
-4
-1
-2
-3
-11
-4
-1
-2
-3
-15
-1
-2
-3
-11111
+
