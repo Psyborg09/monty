@@ -26,23 +26,26 @@ int execute(char *line, stack_t **stack_head, unsigned int linenum, FILE *file)
 				{"stack", custom_stack},
 				{NULL, NULL}
 				};
-	opcode = strtok(line_content, " \n\t");
+	unsigned int i = 0;
+	char *opcode;
+
+	opcode = strtok(line, " \n\t");
 	if (opcode && opcode[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
 	while (operations[i].opcode && opcode)
 	{
 		if (strcmp(opcode, operations[i].opcode) == 0)
-		{	operations[i].f(stack_head, line_number);
+		{	operations[i].f(stack_head, linenum);
 			return (0);
 		}
 		i++;
 	}
 	if (opcode && operations[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-		fclose(monty_file);
-		free(line_content);
+		fprintf(stderr, "L%d: unknown instruction %s\n", linenum, opcode);
+		fclose(file);
+		free(line);
 		freestack(*stack_head);
 		exit(EXIT_FAILURE);
 	}

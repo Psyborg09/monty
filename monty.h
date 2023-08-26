@@ -83,8 +83,5 @@ void custom_addqueue(stack_t **stack_head, int new_value);
 void custom_queue(stack_t **stack_head, unsigned int line_number);
 void custom_queue(stack_t **stack_head, unsigned int line_number);
 void custom_stack(stack_t **stack_head, __attribute__((unused)) unsigned int line_number);
-extern bus_t bus = {NULL, NULL, NULL, 0};
-extern unsigned int i = 0;
-extern char *opcode;
 #endif
 

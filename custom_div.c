@@ -7,7 +7,7 @@
 */
 void custom_div(stack_t **stack_head, unsigned int line_number)
 {
-	stack_t *current_node;
+	stack_t *currentNode;
 	int stack_length = 0, quotient;
 
 	for (currentNode = *stack_head; currentNode; currentNode = currentNode->next)
