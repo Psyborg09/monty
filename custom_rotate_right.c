@@ -8,8 +8,9 @@
  */
 void custom_rotate_right(stack_t **stack_head, unsigned int line_number)
 {
-	(void) line_number;
 	stack_t *current_node;
+
+	(void) line_number;
 
 	current_node = *stack_head;
 	if (*stack_head == NULL || (*stack_head)->next == NULL)

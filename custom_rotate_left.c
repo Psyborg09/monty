@@ -7,14 +7,15 @@
  */
 void custom_rotate_left(stack_t **stack_head, unsigned int line_number)
 {
+	stack_t *tmp, *new_head;
 	(void) line_number;
-	stack_t *tmp = *stack_head, *new_head;
 
+	tmp = *stack_head;
+	new_head = (*stack_head)->next;
 	if (*stack_head == NULL || (*stack_head)->next == NULL)
 	{
 		return;
 	}
-	new_head = (*stack_head)->next;
 	new_head->prev = NULL;
 	while (tmp->next != NULL)
 	{
